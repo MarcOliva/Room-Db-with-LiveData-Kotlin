@@ -11,11 +11,12 @@ import android.arch.persistence.room.PrimaryKey
 class Contact {
     @PrimaryKey(autoGenerate = true)
     @ColumnInfo(name = "idContact")
-    private var id: Long = 0
+    var id: Long = 0
 
     @ColumnInfo(name = "name")
-    private var name: String = ""
+    var name: String = ""
 
     @ColumnInfo(name = "number")
-    private var number: String = ""
+    var number: String = ""
+
 }

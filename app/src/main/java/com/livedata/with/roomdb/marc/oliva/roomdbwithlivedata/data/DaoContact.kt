@@ -1,5 +1,6 @@
 package com.livedata.with.roomdb.marc.oliva.roomdbwithlivedata.data
 
+import android.arch.lifecycle.LiveData
 import android.arch.persistence.room.*
 
 /**
@@ -8,7 +9,7 @@ import android.arch.persistence.room.*
 @Dao
 interface DaoContact {
     @Query("select * from contacts")
-    fun getAllContacts(): List<Contact>
+    fun getAllContacts(): LiveData<List<Contact>>
 
     @Query("select * from contacts where idContact in (:id)")
     fun getContactById(id :Long): Contact

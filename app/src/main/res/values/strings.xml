@@ -1,3 +1,5 @@
 <resources>
-    <string name="app_name">RoomDbWithLiveData</string>
+    <string name="app_name">Contacts</string>
+    <string name="edit_contact_title">Edit Contact</string>
+    <string name="add_contact_title">Add Contact</string>
 </resources>
