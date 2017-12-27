@@ -12,7 +12,10 @@ interface DaoContact {
     fun getAllContacts(): LiveData<List<Contact>>
 
     @Query("select * from contacts where idContact in (:id)")
-    fun getContactById(id :Long): Contact
+    fun getContactById(id: Int): Contact
+
+    @Query("delete from contacts")
+    fun deleteAllContacts()
 
     @Insert(onConflict = OnConflictStrategy.REPLACE)
     fun insertContact(contact: Contact)

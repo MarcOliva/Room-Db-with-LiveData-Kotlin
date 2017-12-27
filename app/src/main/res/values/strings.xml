@@ -2,4 +2,13 @@
     <string name="app_name">Contacts</string>
     <string name="edit_contact_title">Edit Contact</string>
     <string name="add_contact_title">Add Contact</string>
+
+    <string name="error_save_contact">Error with saving contact</string>
+    <string name="save_contact">Contact saved</string>
+
+    <string name="error_update_contact">Error with updating contact</string>
+    <string name="update_contact">Contact updated</string>
+
+    <string name="error_delete_contact">Error with deleting contact</string>
+    <string name="delete_contact">Contact deleted</string>
 </resources>

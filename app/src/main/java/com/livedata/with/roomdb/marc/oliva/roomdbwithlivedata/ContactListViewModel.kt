@@ -12,12 +12,12 @@ import com.livedata.with.roomdb.marc.oliva.roomdbwithlivedata.data.ContactDb
  */
 class ContactListViewModel(application: Application) : AndroidViewModel(application) {
 
-    private var listContact: LiveData<List<Contact>>
-    private var appDb: ContactDb? = null
+    var listContact: LiveData<List<Contact>>
+    private val appDb: ContactDb
 
     init {
-        appDb = ContactDb::getDataBase.call(this)
-        listContact = appDb!!.daoContact().getAllContacts()
+        appDb = ContactDb.getDataBase(this.getApplication())
+        listContact = appDb.daoContact().getAllContacts()
     }
 
     fun getListContacts(): LiveData<List<Contact>> {
@@ -28,10 +28,11 @@ class ContactListViewModel(application: Application) : AndroidViewModel(applicat
         addAsynTask(appDb).execute(contact)
     }
 
-    class addAsynTask(db: ContactDb?) : AsyncTask<Contact, Void, Void>() {
+
+    class addAsynTask(db: ContactDb) : AsyncTask<Contact, Void, Void>() {
         private var contactDb = db
         override fun doInBackground(vararg params: Contact): Void? {
-            contactDb!!.daoContact().insertContact(params[0])
+            contactDb.daoContact().insertContact(params[0])
             return null
         }
 
